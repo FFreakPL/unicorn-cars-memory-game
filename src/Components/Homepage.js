@@ -1,27 +1,31 @@
 import React, { useState, useEffect} from 'react';
-import {Cards} from './Cards'
+import {Cards, CardsBg} from './Cards'
 import Header from './Header';
 import Footer from './Footer'
+import SingleCard from './SingleCard'
 
-const cardImages = [
-    {url: "/assets/card-images/1.jpg",},
-    {url: "/assets/card-images/2.jpg",},
-    {url: "/assets/card-images/3.jpg",},
-    {url: "/assets/card-images/4.jpg",},
-    {url: "/assets/card-images/5.jpg",},
-    {url: "/assets/card-images/6.jpg",},
-    {url: "/assets/card-images/7.jpg",},
-    {url: "/assets/card-images/8.jpg",},
-    {url: "/assets/card-images/9.jpg",},
-    {url: "/assets/card-images/10.jpg",},
-    {url: "/assets/card-images/11.jpg",},
-    {url: "/assets/card-images/12.jpg",},
-    {url: "/assets/card-images/13.jpg",},
-]
+// const cardImages = [
+//     {url: "/assets/card-images/1.jpg",},
+//     {url: "/assets/card-images/2.jpg",},
+//     {url: "/assets/card-images/3.jpg",},
+//     {url: "/assets/card-images/4.jpg",},
+//     {url: "/assets/card-images/5.jpg",},
+//     {url: "/assets/card-images/6.jpg",},
+//     {url: "/assets/card-images/7.jpg",},
+//     {url: "/assets/card-images/8.jpg",},
+//     {url: "/assets/card-images/9.jpg",},
+//     {url: "/assets/card-images/10.jpg",},
+//     {url: "/assets/card-images/11.jpg",},
+//     {url: "/assets/card-images/12.jpg",},
+//     {url: "/assets/card-images/13.jpg",},
+// ]
 
 export default function Homepage(){
     const [cards, setCards] = useState([])
     const [turns, setTurns] = useState(0)
+    const [choiceOne, setChoiceOne] = useState(null)
+    const [choiceTwo, setChoiceTwo] = useState(null)
+
 
     //shuffle cards
     const shuffleCards = () => {
@@ -33,25 +37,54 @@ export default function Homepage(){
         setTurns(0)
     }
 
-    console.log(cards, turns)
+    //handle choice
+    const handleChoice = (card) => {
+        choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
+        console.log(choiceOne)
+        console.log(choiceTwo)
+    }
+
+    //compare choices
+    useEffect(() => {
+        if(choiceOne && choiceTwo) {
+            if (choiceOne.url === choiceTwo.url) {
+                setCards(prevCards => {
+                    return prevCards.map(card => {
+                        if (card.url === choiceOne.url) {
+                            return {...card, matched: true}
+                        } else {
+                            return card
+                        }
+                    })
+                })
+                console.log("Brawo!!")
+                resetTurn();
+            } else {
+            console.log("Ni chuja!!")
+                resetTurn();
+            }
+        }
+    },[choiceOne, choiceTwo])
+    console.log(cards)
+
+    //reset choices
+    const resetTurn = () => {
+        setChoiceOne(null)
+        setChoiceTwo(null)
+        setTurns(prev => prev + 1)
+    }
 
     return (
         <>
             <Header props={shuffleCards}/>
-            <section className="card_container">
+            <section className="cards">
                 {cards.map(card => (
-                    <div className="card_photo" key={card.id}>
-                        <img className="card_front" src={card.url} alt="card_front"/>
-                        <img src="/assets/card-images/card-bg.jpeg" alt="card_back"/>
-                    </div>
+                    <SingleCard
+                        key={card.id}
+                        card={card}
+                        handleChoice={handleChoice}
+                        />
                 ))}
-            {/*{Cards.map((photo) => {*/}
-            {/*    return (*/}
-            {/*        <div className="card_photo"*/}
-            {/*             key={photo.id}*/}
-            {/*             style={{backgroundImage: `url(/${photo.url})`}}/>*/}
-            {/*    )*/}
-            {/*})}*/}
         </section>
             <Footer/>
         </>
