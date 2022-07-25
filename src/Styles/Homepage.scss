@@ -1,0 +1,14 @@
+.card {
+  &_container {
+    background-image: url("../../public/assets/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    padding-top: 6vh;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height:88vh;
+    justify-content: center;
+    align-items: center;
+  }
+}

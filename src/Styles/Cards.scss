@@ -1,0 +1,11 @@
+.card {
+  &_photo {
+    width: 25vw;
+    height: 15vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+    margin: 1rem;
+  }
+}
