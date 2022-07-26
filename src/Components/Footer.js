@@ -1,10 +1,10 @@
 import React, { useState, useEffect} from 'react';
 
-export default function Footer() {
+export default function Footer({ turns }) {
 
     return(
         <footer className="footer">
-            Footer
+            <p>Turns: {turns}</p>
         </footer>
     )
 }

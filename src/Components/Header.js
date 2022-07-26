@@ -4,7 +4,7 @@ export default function Header({props}) {
 
     return(
         <header className="header">
-            <button onClick={props}>New game</button>
+            <button className="header_button" type="button" onClick={props}>New game</button>
         </header>
     )
 }

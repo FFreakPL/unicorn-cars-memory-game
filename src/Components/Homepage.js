@@ -4,35 +4,20 @@ import Header from './Header';
 import Footer from './Footer'
 import SingleCard from './SingleCard'
 
-// const cardImages = [
-//     {url: "/assets/card-images/1.jpg",},
-//     {url: "/assets/card-images/2.jpg",},
-//     {url: "/assets/card-images/3.jpg",},
-//     {url: "/assets/card-images/4.jpg",},
-//     {url: "/assets/card-images/5.jpg",},
-//     {url: "/assets/card-images/6.jpg",},
-//     {url: "/assets/card-images/7.jpg",},
-//     {url: "/assets/card-images/8.jpg",},
-//     {url: "/assets/card-images/9.jpg",},
-//     {url: "/assets/card-images/10.jpg",},
-//     {url: "/assets/card-images/11.jpg",},
-//     {url: "/assets/card-images/12.jpg",},
-//     {url: "/assets/card-images/13.jpg",},
-// ]
-
 export default function Homepage(){
     const [cards, setCards] = useState([])
     const [turns, setTurns] = useState(0)
     const [choiceOne, setChoiceOne] = useState(null)
     const [choiceTwo, setChoiceTwo] = useState(null)
-
+    const [disabled, setDisabled] = useState(false)
 
     //shuffle cards
     const shuffleCards = () => {
         const shuffledCards = [...Cards, ...Cards]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({ ...card, id: Math.random() }))
-
+        setChoiceOne(null)
+        setChoiceTwo(null)
         setCards(shuffledCards)
         setTurns(0)
     }
@@ -47,6 +32,7 @@ export default function Homepage(){
     //compare choices
     useEffect(() => {
         if(choiceOne && choiceTwo) {
+            setDisabled(true)
             if (choiceOne.url === choiceTwo.url) {
                 setCards(prevCards => {
                     return prevCards.map(card => {
@@ -57,21 +43,25 @@ export default function Homepage(){
                         }
                     })
                 })
-                console.log("Brawo!!")
                 resetTurn();
             } else {
-            console.log("Ni chuja!!")
-                resetTurn();
+                setTimeout(() => resetTurn(), 1000)
             }
         }
     },[choiceOne, choiceTwo])
     console.log(cards)
+
+    //start game onLoad
+    useEffect(() => {
+        shuffleCards()
+    },[])
 
     //reset choices
     const resetTurn = () => {
         setChoiceOne(null)
         setChoiceTwo(null)
         setTurns(prev => prev + 1)
+        setDisabled(false)
     }
 
     return (
@@ -83,10 +73,13 @@ export default function Homepage(){
                         key={card.id}
                         card={card}
                         handleChoice={handleChoice}
+                        flipped={card === choiceOne || card === choiceTwo || card.matched}
+                        disabled={disabled}
                         />
                 ))}
-        </section>
-            <Footer/>
+            </section>
+            {}
+            <Footer turns={turns}/>
         </>
     )
 }
