@@ -17,6 +17,9 @@
     border: none;
     background-color: #fedcdb;
     font-size: 4vh;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 

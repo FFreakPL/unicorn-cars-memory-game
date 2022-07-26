@@ -83,7 +83,7 @@ export default function Homepage(){
                         />
                 ))}
             </section>
-            {(cards.length === matched.length) && <h1 className="success">Brawo!! skończyłeś grę w {turns} podejściach :)</h1>}
+            {(cards.length === matched.length) && <h1 className="success">Congratulations!! You finished in {turns} turns :)</h1>}
             <Footer turns={turns}/>
         </>
     )

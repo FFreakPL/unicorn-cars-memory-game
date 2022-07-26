@@ -6,4 +6,13 @@
   align-items: center;
   font-size: 3vh;
   background-color: #fedcdb;
+  position: relative;
+
+  a {
+    font-size:1vh;
+    position: absolute;
+    right: 2vw;
+    text-decoration: none;
+    color: black;
+  }
 }

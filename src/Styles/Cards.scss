@@ -8,6 +8,10 @@
     position: relative;
     z-index: 0;
 
+    &:hover {
+        cursor: pointer;
+    }
+
     @include mobile {
         width: 72px;
     }
