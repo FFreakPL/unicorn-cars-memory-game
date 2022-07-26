@@ -11,3 +11,24 @@
   max-height: 100%;
 }
 
+.success {
+  position: absolute;
+  top: 45vh;
+  left: 0;
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9490196078);
+  padding: 1rem 0 1rem 0;
+  border-radius: 1rem;
+  box-shadow: 0px -1px 20vh 15vh rgb(254 224 225);
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+

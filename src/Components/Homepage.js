@@ -10,6 +10,7 @@ export default function Homepage(){
     const [choiceOne, setChoiceOne] = useState(null)
     const [choiceTwo, setChoiceTwo] = useState(null)
     const [disabled, setDisabled] = useState(false)
+    const [matched, setMatched] = useState(0)
 
     //shuffle cards
     const shuffleCards = () => {
@@ -25,8 +26,6 @@ export default function Homepage(){
     //handle choice
     const handleChoice = (card) => {
         choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
-        console.log(choiceOne)
-        console.log(choiceTwo)
     }
 
     //compare choices
@@ -49,7 +48,6 @@ export default function Homepage(){
             }
         }
     },[choiceOne, choiceTwo])
-    console.log(cards)
 
     //start game onLoad
     useEffect(() => {
@@ -64,6 +62,13 @@ export default function Homepage(){
         setDisabled(false)
     }
 
+    useEffect(() => {
+        const filtered = cards.filter((card) => card.matched)
+        setMatched(filtered)
+    },[turns])
+    console.log(matched)
+    console.log(cards)
+    console.log(Cards)
     return (
         <>
             <Header props={shuffleCards}/>
@@ -78,7 +83,7 @@ export default function Homepage(){
                         />
                 ))}
             </section>
-            {}
+            {(cards.length === matched.length) && <h1 className="success">Brawo!! skończyłeś grę w {turns} podejściach :)</h1>}
             <Footer turns={turns}/>
         </>
     )

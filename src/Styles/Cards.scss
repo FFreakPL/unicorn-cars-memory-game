@@ -9,9 +9,12 @@
     z-index: 0;
 
     @include mobile {
-        width: 88px;
+        width: 72px;
     }
     @include tablet {
+        width: 135px;
+    }
+    @include desktop {
         width: 170px;
     }
 
