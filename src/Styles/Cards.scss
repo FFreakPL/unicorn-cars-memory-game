@@ -13,10 +13,10 @@
     }
 
     @include mobile {
-        width: 72px;
+        width: 20vw;
     }
     @include tablet {
-        width: 135px;
+        width: 18vw;
     }
     @include desktop {
         width: 170px;

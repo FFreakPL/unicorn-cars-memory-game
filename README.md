@@ -1,3 +1,32 @@
+#Unicorn Memory Game 
+This is a simple memory-card game (to surprise my daughter:) )
+
+`Responsive single page Game`
+<p><img width="360" alt="desktop" src="https://user-images.githubusercontent.com/94534923/180906794-cb176ae9-c059-4715-9156-f465cb5e3652.png">
+<img height="231" alt="mobile" src="https://user-images.githubusercontent.com/94534923/180906807-a5f0dc46-8c8f-4424-939c-c1e0c4c298ff.png">
+<img height="231" alt="tablet" src="https://user-images.githubusercontent.com/94534923/180906812-717bd721-97c2-4985-ae0b-e38034047d2f.png"></p>
+
+`Success confirmation`
+<p><img width="360" alt="success" src="https://user-images.githubusercontent.com/94534923/180906810-0267b80e-aa5e-453b-ba76-37e901b05036.png"></p>
+
+## Running APP
+<p>https://ffreakpl-unicorn.vercel.app</p>
+
+## Feautures
+<li>Responsive design</li>
+<li>Mobile first</li>
+
+## Technologies
+<p align="left">
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="Javascript" /></a>
+<a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" width="36" height="36" alt="NodeJS" /></a>
+<a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a>
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="36" height="36" alt="HTML5" /></a>
+<a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="36" height="36" alt="CSS3" /></a>
+<a href="https://sass-lang.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/sass-colored.svg" width="36" height="36" alt="Sass" /></a>
+<a href="https://webpack.js.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/webpack-colored.svg" width="36" height="36" alt="Webpack" /></a>
+</p>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
