@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 import {CardsBg} from "./Cards";
 
 export default function SingleCard({ card, handleChoice, flipped, disabled }) {

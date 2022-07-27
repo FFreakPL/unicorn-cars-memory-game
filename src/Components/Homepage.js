@@ -1,16 +1,21 @@
 import React, { useState, useEffect} from 'react';
-import {Cards, CardsBg} from './Cards'
+import {Cards} from './Cards'
 import Header from './Header';
 import Footer from './Footer'
 import SingleCard from './SingleCard'
+import {doc, updateDoc, arrayUnion, onSnapshot} from "firebase/firestore";
+import {auth, db} from "./Firebase/Firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Homepage(){
+    const [user, loading] = useAuthState(auth);
     const [cards, setCards] = useState([])
     const [turns, setTurns] = useState(0)
     const [choiceOne, setChoiceOne] = useState(null)
     const [choiceTwo, setChoiceTwo] = useState(null)
     const [disabled, setDisabled] = useState(false)
     const [matched, setMatched] = useState(0)
+    const [bestScore, setBestScore] = useState()
 
     //shuffle cards
     const shuffleCards = () => {
@@ -54,6 +59,30 @@ export default function Homepage(){
         shuffleCards()
     },[])
 
+    useEffect(() => {
+        if(user){
+            onSnapshot(doc(db, "users", `${user.email}`), (doc) => {
+                const bestScore = (doc.data().turns).sort((a, b) => a - b).filter((el) => el !== 0);
+                setBestScore(bestScore[0])
+            })}
+    },[user])
+    console.log(user)
+
+    const sendNumberOfTurns = async () => {
+        if(cards.length === matched.length) {
+            try {
+                const user = auth.currentUser;
+                const userRef = doc(db, "users", `${user.email}`)
+                await updateDoc(userRef, {
+                    turns: arrayUnion(turns),
+                });
+            } catch (err) {
+                console.error(err)
+                alert(err.message);
+            }
+        }
+    }
+
     //reset choices
     const resetTurn = () => {
         setChoiceOne(null)
@@ -66,12 +95,15 @@ export default function Homepage(){
         const filtered = cards.filter((card) => card.matched)
         setMatched(filtered)
     },[turns])
-    console.log(matched)
-    console.log(cards)
-    console.log(Cards)
+
+
+    if(cards.length === matched.length) {
+        sendNumberOfTurns()
+    }
+
     return (
         <>
-            <Header props={shuffleCards}/>
+            <Header props={shuffleCards} bestScore={bestScore}/>
             <section className="cards">
                 {cards.map(card => (
                     <SingleCard

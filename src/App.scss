@@ -1,9 +1,15 @@
 @import "./Reset";
 @import "./Styles/Mixin";
 @import "./Styles/Header";
+@import "./Styles/Buttons";
+@import "./Styles/Keyframes";
+@import "./Styles/PopUp";
 @import "./Styles/Footer";
 @import "./Styles/Cards";
 @import "./Styles/Homepage";
+@import "./Styles/Login";
+@import "./Styles/Register";
+@import "./Styles/Reset";
 
 .app {
   max-width: 100%;
@@ -31,3 +37,9 @@
   }
 }
 
+.bestScore {
+  font-size: 5rem;
+  position:absolute;
+  top: 0;
+  left: 0;
+}

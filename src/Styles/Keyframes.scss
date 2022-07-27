@@ -1,0 +1,16 @@
+@keyframes buttonColor {
+  from {
+    color: black;
+  }
+  to {
+    color: white;
+  }
+}
+@keyframes buttonBorder {
+  from {
+    border: 2px solid black;
+  }
+  to {
+    border: 2px solid white;
+  }
+}
