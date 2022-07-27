@@ -1,13 +1,16 @@
 #Unicorn Memory Game 
 This is a simple memory-card game (to surprise my daughter:) )
 
+`Firebase Auth`
+<p><img width="360" alt="success" src="https://user-images.githubusercontent.com/94534923/181221100-be781c16-6bee-4e22-91aa-be66c4cd5e25.png"></p>
+
 `Responsive single page Game`
-<p><img width="360" alt="desktop" src="https://user-images.githubusercontent.com/94534923/180906794-cb176ae9-c059-4715-9156-f465cb5e3652.png">
-<img height="231" alt="mobile" src="https://user-images.githubusercontent.com/94534923/180906807-a5f0dc46-8c8f-4424-939c-c1e0c4c298ff.png">
-<img height="231" alt="tablet" src="https://user-images.githubusercontent.com/94534923/180906812-717bd721-97c2-4985-ae0b-e38034047d2f.png"></p>
+<p><img width="360" alt="desktop" src="https://user-images.githubusercontent.com/94534923/181221096-7c6707a3-7721-4992-b4c2-430e62307917.png">
+<img height="231" alt="mobile" src="https://user-images.githubusercontent.com/94534923/181221093-7c6d351e-c9aa-44f6-9ae4-4e52ed09f222.png">
+<img height="231" alt="tablet" src="https://user-images.githubusercontent.com/94534923/181221091-b5117ff5-fed9-4a46-aef0-16c01ba96450.png"></p>
 
 `Success confirmation`
-<p><img width="360" alt="success" src="https://user-images.githubusercontent.com/94534923/180906810-0267b80e-aa5e-453b-ba76-37e901b05036.png"></p>
+<p><img width="360" alt="success" src="https://user-images.githubusercontent.com/94534923/181221076-9e606b67-23f5-4840-bf23-c2b1fc2c99e3.png"></p>
 
 ## Running APP
 <p>https://ffreakpl-unicorn.vercel.app</p>
@@ -15,6 +18,8 @@ This is a simple memory-card game (to surprise my daughter:) )
 ## Feautures
 <li>Responsive design</li>
 <li>Mobile first</li>
+<li>Managing users with Firebase Firestore</li>
+<li>Reactjs-popup to show best score ever for every user</li>
 
 ## Technologies
 <p align="left">
@@ -25,6 +30,7 @@ This is a simple memory-card game (to surprise my daughter:) )
 <a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="36" height="36" alt="CSS3" /></a>
 <a href="https://sass-lang.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/sass-colored.svg" width="36" height="36" alt="Sass" /></a>
 <a href="https://webpack.js.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/webpack-colored.svg" width="36" height="36" alt="Webpack" /></a>
+a href="https://firebase.google.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/firebase-colored.svg" width="36" height="36" alt="Firebase" /></a>
 </p>
 
 # Getting Started with Create React App
