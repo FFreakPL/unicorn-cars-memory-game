@@ -20,6 +20,7 @@ This is a simple memory-card game (to surprise my daughter:) )
 <li>Mobile first</li>
 <li>Managing users with Firebase Firestore</li>
 <li>Reactjs-popup to show best score ever for every user</li>
+<li>Images optimized with TinyPNG</li>
 
 ## Technologies
 <p align="left">
