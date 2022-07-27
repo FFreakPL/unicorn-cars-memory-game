@@ -66,7 +66,6 @@ export default function Homepage(){
                 setBestScore(bestScore[0])
             })}
     },[user])
-    console.log(user)
 
     const sendNumberOfTurns = async () => {
         if(cards.length === matched.length) {
