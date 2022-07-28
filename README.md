@@ -2,20 +2,27 @@
 This is a simple memory-card game (to surprise my daughter:) )
 
 `Firebase Auth`
-<p><img width="360" alt="success" src="https://user-images.githubusercontent.com/94534923/181221100-be781c16-6bee-4e22-91aa-be66c4cd5e25.png"></p>
+<p><img width="360" alt="success" src="https://user-images.githubusercontent.com/94534923/181590666-3b8463ae-9bb0-42c2-a3a2-4bfd872b833d.png"></p>
 
-`Responsive single page Game`
-<p><img width="360" alt="desktop" src="https://user-images.githubusercontent.com/94534923/181221096-7c6707a3-7721-4992-b4c2-430e62307917.png">
-<img height="231" alt="mobile" src="https://user-images.githubusercontent.com/94534923/181221093-7c6d351e-c9aa-44f6-9ae4-4e52ed09f222.png">
-<img height="231" alt="tablet" src="https://user-images.githubusercontent.com/94534923/181221091-b5117ff5-fed9-4a46-aef0-16c01ba96450.png"></p>
+`Unicorn Cards`
+<p><img width="360" alt="desktop" src="https://user-images.githubusercontent.com/94534923/181590616-5f763b73-86a2-47f8-aafe-ba3504885ca3.png">
+<img height="202" alt="mobile" src="https://user-images.githubusercontent.com/94534923/181590647-bcc329b2-64ef-47e3-a57a-66c970e5b1a8.png">
+<img height="202" alt="mobile menu" src="https://user-images.githubusercontent.com/94534923/181590651-c9c6adb6-8e18-4220-be15-626293983e65.png">
+<img height="202" alt="mobile menu popup" src="https://user-images.githubusercontent.com/94534923/181590658-3a838ca6-a6c3-4390-8537-ab84647d5ae3.png">
+<img height="202" alt="tablet" src="https://user-images.githubusercontent.com/94534923/181590653-f53e1c79-e2e4-4012-bc1e-de3ba35d4308.png">
+</p>
+
+`Cars Cards`
+<p><img width="360" alt="desktop" src="https://user-images.githubusercontent.com/94534923/181590640-c5f7e958-28db-482a-8e48-fb2ba62a2a0e.png"></p>
 
 `Success confirmation`
-<p><img width="360" alt="success" src="https://user-images.githubusercontent.com/94534923/181221076-9e606b67-23f5-4840-bf23-c2b1fc2c99e3.png"></p>
+<p><img width="360" alt="success" src="https://user-images.githubusercontent.com/94534923/181590661-840d0873-f23c-4103-a20d-2626f7f98b7e.png"></p>
 
 ## Running APP
 <p>https://ffreakpl-unicorn.vercel.app</p>
 
 ## Feautures
+<li>2 different sets of cards</li>
 <li>Responsive design</li>
 <li>Mobile first</li>
 <li>Managing users with Firebase Firestore</li>
