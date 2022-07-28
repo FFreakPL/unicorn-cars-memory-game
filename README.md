@@ -1,5 +1,6 @@
-#Unicorn Memory Game 
-This is a simple memory-card game (to surprise my daughter:) )
+#Unicorn&Cars Memory Game 
+
+This is a simple memory-card game (to surprise my daughter and son:) )
 
 `Firebase Auth`
 <p><img width="360" alt="success" src="https://user-images.githubusercontent.com/94534923/181590666-3b8463ae-9bb0-42c2-a3a2-4bfd872b833d.png"></p>
