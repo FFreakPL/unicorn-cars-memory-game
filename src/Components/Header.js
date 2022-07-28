@@ -2,8 +2,11 @@ import React, { useState, useEffect} from 'react';
 import { logout } from "./Firebase/Firebase";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import {auth, db} from "./Firebase/Firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Header({ props, bestScore, handleSwitchCardsCars, switchCards }) {
+    const [user, loading] = useAuthState(auth);
     const [styleState, setStyleState] = useState({})
 
     useEffect(() => {
@@ -23,6 +26,7 @@ export default function Header({ props, bestScore, handleSwitchCardsCars, switch
     return(
         <header className="top_nav" style={styleState}>
             <div className="top_nav_logo"></div>
+            <div className="top_nav_hello">Witaj {user.email}</div>
             <input id="menu_toggle" type="checkbox"/>
             <label className='menu_button_container' htmlFor="menu_toggle">
                 <div className='menu_button'></div>

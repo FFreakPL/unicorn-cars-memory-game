@@ -1,5 +1,5 @@
 .card {
-    width: 250px;
+    width: 11vw;
     border-radius: 1rem;
     margin: 0.5rem;
     display: flex;
@@ -9,7 +9,7 @@
     z-index: 0;
 
     &_cars {
-        width: 250px;
+        width: 11vw;
         border-radius: 1rem;
         margin: 0.5rem;
         display: flex;
@@ -31,7 +31,7 @@
         width: 18vw;
     }
     @include desktop {
-        width: 170px;
+        width: 220px;
     }
 
     &_front {

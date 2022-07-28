@@ -10,12 +10,18 @@
   width:100vw;
   position:relative;
 
+  &_hello {
+    font-size: 1.5vh;
+    color: black;
+    margin-right: 15vw;
+  }
+
   &_logo {
     background-image: url("../../public/assets/Logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 10%;
+    width: 20%;
     height: 6vh;
     font-size: 6vh;
     color: black;
