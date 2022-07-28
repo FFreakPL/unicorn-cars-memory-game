@@ -42,7 +42,7 @@ export default function Header({ props, bestScore, handleSwitchCardsCars, switch
                     <Popup trigger={<button className="menu_route"
                                             style={styleState}
                                             type="button">BestScore</button>}
-                           position="left top">
+                           position="bottom center">
                         <div className="popUp">Twój najlepszy wynik to: {bestScore}</div>
                     </Popup>
                 </li>
