@@ -129,7 +129,7 @@ export default function Homepage(){
                         />
                 ))}
             </section>
-            {(cards.length === matched.length) && <h1 className="success">Congratulations!! You finished in {turns} turns :)</h1>}
+            {(cards.length === matched.length) && <h1 className="success" onClick={shuffleCards}>Congratulations!! You finished in {turns} turns :)</h1>}
             <Footer turns={turns} switchCards={switchCards}/>
         </>
     )
