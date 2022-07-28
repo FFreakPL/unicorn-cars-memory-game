@@ -8,6 +8,18 @@
     position: relative;
     z-index: 0;
 
+    &_cars {
+        width: 250px;
+        border-radius: 1rem;
+        margin: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 0;
+        background-color: lightgrey;
+    }
+
     &:hover {
         cursor: pointer;
     }

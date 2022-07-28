@@ -2,14 +2,22 @@
   background-image: url("../../public/assets/bg.jpg");
   background-position: center;
   background-size: cover;
-  padding-top: 6vh;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   min-height:88vh;
   justify-content: center;
   align-items: center;
-  &_container {
 
+  &_cars {
+    background-image: url("../../public/assets/bg3.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height:88vh;
+    justify-content: center;
+    align-items: center;
   }
 }

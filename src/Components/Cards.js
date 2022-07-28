@@ -11,7 +11,7 @@ export const Cards = [
     {url: "assets/card-images/10.jpg", matched: false},
     {url: "assets/card-images/11.jpg", matched: false},
     {url: "assets/card-images/12.jpg", matched: false},
-    {url: "assets/card-images/13.jpg", matched: false},
+    // {url: "assets/card-images/13.jpg", matched: false},
 ]
 
 export const CardsBg = "assets/card-images/card-bg.jpeg";

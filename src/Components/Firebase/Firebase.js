@@ -61,7 +61,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password);
         const user = res.user;
-        const payload = {email: email, password: password, userType: "regular"};
+        const payload = {email: email, userType: "regular"};
         await setDoc(doc(db, "users", user.email), payload)
     }
     catch (err) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import {Cards} from './Cards'
+import {Cards2} from './Cards2'
 import Header from './Header';
 import Footer from './Footer'
 import SingleCard from './SingleCard'
@@ -10,6 +11,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 export default function Homepage(){
     const [user, loading] = useAuthState(auth);
     const [cards, setCards] = useState([])
+    const [switchCards, setSwitchCards] = useState(false)
     const [turns, setTurns] = useState(0)
     const [choiceOne, setChoiceOne] = useState(null)
     const [choiceTwo, setChoiceTwo] = useState(null)
@@ -19,15 +21,27 @@ export default function Homepage(){
 
     //shuffle cards
     const shuffleCards = () => {
-        const shuffledCards = [...Cards, ...Cards]
+        if(switchCards === false) {
+            const shuffledCards = [...Cards, ...Cards]
+                .sort(() => Math.random() - 0.5)
+                .map((card) => ({...card, id: Math.random()}))
+            setChoiceOne(null)
+            setChoiceTwo(null)
+            setCards(shuffledCards)
+            setTurns(0)
+        } else if (switchCards === true) {
+            const shuffledCards = [...Cards2, ...Cards2]
             .sort(() => Math.random() - 0.5)
-            .map((card) => ({ ...card, id: Math.random() }))
-        setChoiceOne(null)
-        setChoiceTwo(null)
-        setCards(shuffledCards)
-        setTurns(0)
+            .map((card) => ({...card, id: Math.random()}))
+            setChoiceOne(null)
+            setChoiceTwo(null)
+            setCards(shuffledCards)
+            setTurns(0)
+        }
     }
-
+    const handleSwitchCardsCars = () => {
+        setSwitchCards(prevState => !prevState)
+    }
     //handle choice
     const handleChoice = (card) => {
         choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
@@ -57,7 +71,7 @@ export default function Homepage(){
     //start game onLoad
     useEffect(() => {
         shuffleCards()
-    },[])
+    },[switchCards])
 
     useEffect(() => {
         if(user){
@@ -102,8 +116,8 @@ export default function Homepage(){
 
     return (
         <>
-            <Header props={shuffleCards} bestScore={bestScore}/>
-            <section className="cards">
+            <Header props={shuffleCards} bestScore={bestScore} handleSwitchCardsCars={handleSwitchCardsCars} switchCards={switchCards}/>
+            <section className={switchCards === false ? "cards" : "cards_cars"}>
                 {cards.map(card => (
                     <SingleCard
                         key={card.id}
@@ -111,11 +125,12 @@ export default function Homepage(){
                         handleChoice={handleChoice}
                         flipped={card === choiceOne || card === choiceTwo || card.matched}
                         disabled={disabled}
+                        switchCards={switchCards}
                         />
                 ))}
             </section>
             {(cards.length === matched.length) && <h1 className="success">Congratulations!! You finished in {turns} turns :)</h1>}
-            <Footer turns={turns}/>
+            <Footer turns={turns} switchCards={switchCards}/>
         </>
     )
 }
